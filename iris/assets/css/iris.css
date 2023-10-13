@@ -1,0 +1,239 @@
+.iris {
+	-webkit-font-smoothing: antialiased;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: .9em;
+	color: #1e2a28;
+	width: 740px;
+	margin: 0 auto;
+	padding: 0px 20px 20px 20px;
+}
+
+.iris h1 {
+	font-weight: normal;
+}
+
+input[type=text].iris-input, .iris input, .iris textarea, .iris select,
+	.iris-input, .iris-select {
+	box-sizing: border-box;
+	width: 200px;
+	height: initial;
+	padding: 8px 5px;
+	border: 1px solid #9a9a9a;
+	border-radius: 3px;
+}
+
+.iris input[type="checkbox"] {
+	width: auto;
+}
+
+.iris input[type="radio"] {
+	width: auto;
+}
+
+.checkboxes .checkbox {
+	display: inline-block;
+	padding-right: 20px;
+	white-space: nowrap;
+}
+
+.checkboxes input {
+	width: auto;
+	vertical-align: middle;
+	margin-left: 0;
+	display: initial;
+	opacity: initial;
+	position: inherit;
+	pointer-events: initial;
+}
+
+.checkboxes .checkbox-label {
+	vertical-align: middle;
+	color: #666;
+}
+
+.iris textarea, .iris-textarea {
+	width: 300px;
+}
+
+.iris select, .iris-select {
+	display: initial;
+	height: 30px;
+	background-color: #fff;
+	padding: 2px 5px;
+}
+
+.iris button {
+	width: 100px;
+	padding: 6px 0px;
+	font-size: 1em;
+	cursor: pointer;
+	border-radius: 3px;
+	background: #1871e6;
+	color: #FFF;
+	margin: 0px 20px 5px 0;
+	border: #1469d8 1px solid;
+}
+
+.iris button:focus {
+	outline: none;
+}
+
+.iris .iris-row {
+	padding-top: 15px;
+}
+
+#iris-message {
+	padding: 6px 20px;
+	display: none;
+	font-size: 1em;
+	color: rgb(40, 40, 40);
+	box-sizing: border-box;
+	margin: 0px;
+	border-radius: 3px;
+	width: 100%;
+	overflow: auto;
+}
+
+.iris .error {
+	padding: 6px 20px;
+	border-radius: 3px;
+	background-color: #fb817c;
+	border: 1px solid #e46b66;
+}
+
+.iris .success {
+	background-color: #48e0a4;
+	border: #40cc94 1px solid;
+}
+
+.container .success {
+	background-color: #48e0a4;
+	border: #40cc94 1px solid;
+}
+
+.container .error {
+	padding: 6px 20px;
+	border-radius: 3px;
+	background-color: #fb817c;
+	border: 1px solid #e46b66;
+}
+
+#iris-loader-icon {
+	color: #1871e6;
+	font-weight: bold;
+	padding: 6px 20px 6px 0;
+	display: none;
+	vertical-align: middle;
+}
+
+#iris-loader-ack-icon {
+	color: #1871e6;
+	font-weight: bold;
+	padding: 6px 20px 6px 0;
+	display: none;
+	vertical-align: middle;
+}
+
+#iris-btn-send:hover {
+	background: #1363cc;
+	border: #105bbd 1px solid;
+}
+
+.iris .validation-message {
+	color: #e20900;
+	display: inline-block;
+}
+
+.iris .label {
+	margin-bottom: 3px;
+}
+
+.iris-form {
+	border: #eaeaea 1px solid;
+	padding: 10px 25px 10px 30px;
+	border-radius: 3px;
+}
+
+.g-recaptcha {
+	padding-top: 15px;
+}
+
+.iris .display-none {
+	display: none;
+}
+
+#pp-custom-captcha {
+	background: #FFF url(./../../lib/CustomCaptchaImage.php) repeat-y left
+		center;
+	padding-left: 85px;
+}
+
+.icon-add-more-attachment {
+	cursor: pointer;
+	font-style: italic;
+	font-size: .9em;
+}
+
+.attachment-row {
+	margin-bottom: 5px;
+}
+
+.delete-attachment {
+	margin-left: 10px;
+	cursor: pointer;
+	font-style: italic;
+	font-size: .9em;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.show-iris-btn:hover {
+	cursor: pointer;
+}
+
+#iris-dialog .iris {
+	width: 375px;
+}
+
+#add-more-alert {
+	display: none;
+}
+
+@media all and (max-width: 480px) {
+	.ui-dialog {
+		width: 300px ! important;
+	}
+}
+
+@media all and (max-width: 780px) {
+	.iris {
+		width: auto;
+	}
+}
+
+@media all and (max-width: 400px) {
+	.iris {
+		padding: 0px 20px;
+	}
+	.iris h1 {
+		font-size: 1.2em;
+	}
+	.iris input, .iris textarea, .iris select {
+		width: 100%;
+	}
+	.iris-form {
+		border: none;
+		padding: 0;
+	}
+	#rc-imageselect, .g-recaptcha {
+		transform: scale(0.8);
+		-webkit-transform: scale(0.8);
+		transform-origin: 0 0;
+		-webkit-transform-origin: 0 0;
+	}
+	#iris-dialog .iris {
+		width: auto;
+	}
+}
