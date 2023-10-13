@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+
+/* Iris styles - dark theme implementation */
+
+body {
+	background-color: #111111 !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, 
+make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .iriscolumn, .infocolumn {
+    width: 100%;
+  }
+}
+
+.colcontainer {
+	display:flex;
+	max-width: 1200px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.iriscolumn {
+	flex: 70%;
+	background-color: #000000;
+	-webkit-font-smoothing: antialiased;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: .9em;
+	color: #ababab;
+	padding: 20px;
+	margin: 50px 50px 50px 0;
+	border-radius: 0;
+}
+
+.infocolumn {
+	flex: 30%;
+	background-color: #000000;
+	-webkit-font-smoothing: antialiased;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: .9em;
+	color: #ababab;
+	padding: 20px;
+	margin: 50px 50px 50px 0;
+	border-radius: 0;
+}
+
+.iriscolumn h1, .infocolumn h1 {
+	font-size: 2em;
+	font-weight: 500;
+	text-transform: capitalize;
+	color: #ffffff;
+	padding-top: 15px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+input[type=text].iris-input, .iriscolumn input, .iriscolumn textarea, .iriscolumn select,
+	.iris-input, .iris-select {
+	box-sizing: border-box;
+	width: 50%;
+	height: initial;
+	padding: 8px 5px;
+	border: 1px solid #9a9a9a;
+	border-radius: 3px;
+}
+
+.iriscolumn input[type="checkbox"] {
+	width: auto;
+}
+
+.iriscolumn input[type="radio"] {
+	width: auto;
+}
+
+.checkboxes .checkbox {
+	display: inline-block;
+	padding-right: 20px;
+	white-space: nowrap;
+}
+
+.checkboxes input {
+	width: auto;
+	vertical-align: middle;
+	margin-left: 0;
+	display: initial;
+	opacity: initial;
+	position: inherit;
+	pointer-events: initial;
+}
+
+.checkboxes .checkbox-label {
+	vertical-align: middle;
+	color: #ababab;
+}
+
+.iriscolumn textarea, .iris-textarea {
+	width: 50%;
+}
+
+.iriscolumn select, .iris-select {
+	display: initial;
+	height: 40px;
+	background-color: #ffffff;
+	padding: 2px 5px;
+}
+
+.iriscolumn button {
+	width: 100%;
+	height: 50px;
+	padding: 6px 20px;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 3px;
+	background: #1871e6;
+	color: #ffffff;
+	margin: 0px 20px 20px 0;
+	border: #1469d8 1px solid;
+}
+
+.iriscolumn button:focus {
+	outline: none;
+}
+
+.iriscolumn .iris-row {
+	padding-top: 15px;
+}
+
+.iriscolumn .iris-note {
+	font-size: 1.2em;
+	color: #ffffff;
+}
+
+#iris-message {
+	padding: 6px 20px;
+	display: none;
+	font-size: 1em;
+	color: rgb(255, 255, 255);
+	font-weight: 350;
+	box-sizing: border-box;
+	margin: 0px;
+	border-radius: 3px;
+	width: 100%;
+	overflow: auto;
+}
+
+.iriscolumn .error {
+	padding: 6px 20px;
+	border-radius: 3px;
+	background-color: #fb817c;
+	border: 1px solid #e46b66;
+}
+
+.iriscolumn .success {
+	background-color: #48e0a4;
+	border: #40cc94 1px solid;
+}
+.container .success {
+	background-color: #48e0a4;
+	border: #40cc94 1px solid;
+}
+
+.container .error {
+	padding: 6px 20px;
+	border-radius: 3px;
+	background-color: #fb817c;
+	border: 1px solid #e46b66;
+}
+
+#iris-loader-icon {
+	color: #1871e6;
+	font-weight: bold;
+	padding: 6px 20px 6px 0;
+	display: none;
+	vertical-align: middle;
+}
+
+#iris-loader-ack-icon {
+	color: #1871e6;
+	font-weight: bold;
+	padding: 6px 20px 6px 0;
+	display: none;
+	vertical-align: middle;
+}
+
+#iris-btn-send:hover {
+	background: #1363cc;
+	border: #105bbd 1px solid;
+}
+
+.iriscolumn .validation-message {
+	color: #ff2f27;
+	display: inline-block;
+}
+
+.iriscolumn .label {
+	margin-bottom: 3px;
+}
+
+.iris-form {
+	border: 0;
+	padding: 10px 25px 10px 30px;
+	border-radius: 3px;
+}
+
+.g-recaptcha {
+	padding-top: 15px;
+}
+
+.iriscolumn .display-none {
+	display: none;
+}
+
+#pp-custom-captcha {
+	background: #ffffff url(./../../lib/CustomCaptchaImage.php) repeat-y left center;
+    padding-left: 85px;
+}
+
+.icon-add-more-attachment {
+	cursor: pointer;
+	font-style: italic;
+	font-size: .9em;
+}
+
+.attachment-row {
+	margin-bottom: 5px;
+}
+
+.delete-attachment {
+	margin-left: 10px;
+	cursor: pointer;
+	font-style: italic;
+	font-size: .9em;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+
+.show-iris-btn:hover {
+	cursor: pointer;
+}
+
+#iris-dialog .iriscolumn {
+	width: 375px;
+}
+
+#add-more-alert {
+    display: none;
+}
+
+
+@media all and (max-width: 480px) {
+	.ui-dialog {
+		width: 300px ! important;
+	}
+}
+
+@media all and (max-width: 780px) {
+	.iriscolumn {
+		width: auto;
+	}
+	.righthand-column {
+		width: 30%;
+	}
+}
+
+@media all and (max-width: 400px) {
+	.iriscolumn {
+		padding: 0px 20px;
+	}
+	.iriscolumn h1 {
+		font-size: 1.2em;
+	}
+	.iriscolumn input, .iriscolumn textarea, .iriscolumn select {
+		width: 100%;
+	}
+	.iris-form {
+		border: none;
+		padding: 0;
+	}
+	#rc-imageselect, .g-recaptcha {
+		transform: scale(0.8);
+		-webkit-transform: scale(0.8);
+		transform-origin: 0 0;
+		-webkit-transform-origin: 0 0;
+	}
+	#iris-dialog .iriscolumn {
+		width: auto;
+	}
+}
+
+.header-container {
+	display: flex;
+	width: auto;
+	height: 120px;
+	background-color: #000;
+}
+
+.header-block {
+	width: 1200px;
+	display: flex;
+	flex: row;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.site-logo-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.site-title-container {
+	width: 100%;
+	margin-left: 15px;
+}
+
+.site-title-container .site-title {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.site-title-container .site-title a {
+	color: #ffffff;
+	font-size: 0.9em;
+	text-decoration: none;
+}
+
+.site-title-container .site-description {
+	color: #ababab;
+	font-size: 1em;
+	padding-top: 0;
+	margin-top: -10px;
+}
+
+.header-menu-container {
+	display: flex;
+	width: 100%;
+}
+
+.blogmenu {
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+.blogmenu li {
+    display: inline-block;
+    margin-left: 25px;
+    line-height: 2em;
+}
+.blogmenu li:first-child {
+    margin-left: 0;
+}
+.blogmenu li a,
+.blogmenu li a:visited {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #0082C9 !important;
+	transition: all .2s linear;
+}
+.blogmenu li a:hover,
+.blogmenu li a:active {
+    text-decoration: none;
+    color: #ffffff !important;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 6px rgb(255 255 255 / 10%);
+}
+
+
+
+}
