@@ -1,8 +1,9 @@
 <?php
 
 /*
- * This page is supposed to be included inside another layout page.
- * It can be included in index.php to showcase how the include
+ * This page is supposed to be included in another layout page or someexisting
+ * web page.
+ * This page is included in index.php to showcase how the include
  * should be done.
  */
 use Iris\AntiCSRF;
@@ -85,6 +86,7 @@ $lang = new Language(Config::IRIS_LOCALE);
 				class="<?php echo $required; ?> iris-input"
 				onfocusout='return (isEmpty("name-info","pp-name"))'>
 		</div>
+            <div id="iris-row-explainer">Please enter your name.</div>
 <?php } ?>
 
 <?php if(Config::FIELD_EMAIL['0'] == true) { ?>
@@ -325,12 +327,15 @@ $lang = new Language(Config::IRIS_LOCALE);
                 ?><div id="attachment-info" class="validation-message"
 					data-required-message="<?php  echo $lang->value("message_required"); ?>"></div>
 			</div>
-			<div class="attachment-row">
-				<input type="file" name="attachment[]" id="attachment"
-					class="iris-input <?php echo $required;?>"
-					onchange='return (isEmpty("attachment-info","attachment"))' /><span
-					class="delete-attachment"><?php  echo $lang->value("label_attachment_delete"); ?></span>
-			</div>
+            <div class="attachment-row">
+                <input type="file" name="attachment[]" id="attachment"
+                class="iris-input <?php echo $required;?>"
+                onchange='return (isEmpty("attachment-info","attachment"))' />
+                <span class="delete-attachment" style="display: inline-block;">
+                    <?php echo $lang->value("label_attachment_delete"); ?>
+                </span>
+            </div>
+
 		</div>
 		<?php
                 if (Config::ATTACHMENT_FILE_COUNT_LIMIT != 1) {
