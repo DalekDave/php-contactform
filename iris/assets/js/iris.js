@@ -1,3 +1,9 @@
+/**
+ * Copyright (C) Vincy - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Vincy <vincy@phppot.com>
+ */
 
 /**
  * Used in form UI validation. If a field is empty, then highlight that specific
@@ -77,7 +83,7 @@ function isValidEmailFormat(messageElement, field) {
 	return valid;
 }
 /**
- * Facade function to validate the email field. Checks for both empty and valid
+ * Facade function to validate the email field, checks for both empty and valid
  * format.
  * 
  * @returns {boolean} true on pass else fail.
@@ -90,9 +96,9 @@ function validateEmail() {
 }
 
 /**
- * Check all form fields. This is the entry function called when
- * AJAX submit is done. If you want to add more fields/checks, this is the
- * place to do it.
+ * validates the complete form fields. this is the entry function called when
+ * AJAX submit is done. If you want to add more field/validation, this is the
+ * place to do.
  * 
  * @returns {boolean} true on pass else fail.
  */
@@ -305,7 +311,7 @@ function acknowledgement(form) {
 }
 
 /**
- * Used in attachment field UI
+ * used in attachment field UI
  */
 function addMoreAttachment(attachmentFileCountLimit, deleteLabel) {
 	if (attachmentFileCountLimit == -1
@@ -318,12 +324,8 @@ function addMoreAttachment(attachmentFileCountLimit, deleteLabel) {
 
 		$("#add-more-alert").hide();
 		if (isAddMore) {
-			var deleteLink = '<span class="delete-attachment">' + deleteLabel
-				+ '</span>';
-			var deleteLinkStub = '<span class="delete-attachment"></span>';
-
-			var attachmentRow = '<div class="attachment-row"><input type="file" name="attachment[]" id="attachment" class="iris-input" onchange="return (isEmpty(\'attachment-info\',\'attachment\'))" />'
-				+ deleteLinkStub + '</div>';
+			var deleteLink = '<span class="delete-attachment" style="display: inline-block;">' + deleteLabel + '</span>';
+			var attachmentRow = '<div class="attachment-row"><input type="file" name="attachment[]" id="attachment" class="iris-input" onchange="return (isEmpty(\'attachment-info\',\'attachment\'))" />' + deleteLink + '</div>';
 
 			$(attachmentRow).insertBefore(".icon-add-more-attachment");
 			$(".attachment-row:last").find("input").val("");
@@ -337,10 +339,7 @@ function addMoreAttachment(attachmentFileCountLimit, deleteLabel) {
 $('#attachment').on('click touchstart', function() {
 	$(this).val('');
 });
-
-// Trigger now when you have selected any file
 $("body").bind('change', '#attachment', function(e) {
 	var deleteLabel = $('.icon-add-more-attachment').data('delete-label');
 	$(e.target).next().html(deleteLabel);
 });
-
