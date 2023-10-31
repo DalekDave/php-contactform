@@ -45,9 +45,16 @@ function isEmpty(messageElement, field) {
 		}
 	}
 	console.log("Final message in " + messageElement + ": ", $("#" + messageElement).html());
-	setTimeout(function() {
-        $("#" + messageElement).html("Required information");
-    }, 100);
+	if ($("#" + field).attr("type") == "checkbox") {
+    if ($("#" + field + ":checked").length > 0) {
+        $("#" + messageElement).html("");
+    } else {
+        setTimeout(function() {
+            $("#" + messageElement).html("Required information");
+        }, 100);
+    }
+	$("#" + messageElement).hide();
+	$("#" + messageElement).show();
 	return valid;
 }
 
