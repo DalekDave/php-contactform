@@ -194,6 +194,7 @@ function validate() {
  * 
  */
 $(document).ready(function(e) {
+	console.log("Document is ready, script is loaded.");
 	$(".iris-form").on('submit', (function(e) {
 		e.preventDefault();
 
