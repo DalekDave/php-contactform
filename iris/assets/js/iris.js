@@ -1,11 +1,4 @@
 /**
- * Copyright (C) Vincy - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- * Written by Vincy <vincy@phppot.com>
- */
-
-/**
  * Used in form UI validation. If a field is empty, then highlight that specific
  * field with border in red and show a message as required else if the field is
  * not empty then highlight with green border.
@@ -18,6 +11,9 @@
  */
 function isEmpty(messageElement, field) {
 	valid = true;
+	console.log("Message Element: ", messageElement);
+    console.log("Field: ", field);
+
 	if ($("#" + field + ".required").length <= 0) {
 		return true;
 	}
@@ -313,28 +309,27 @@ function acknowledgement(form) {
 /**
  * used in attachment field UI
  */
-function addMoreAttachment(attachmentFileCountLimit, deleteLabel) {
-	if (attachmentFileCountLimit == -1
-		|| $(".attachment-row").length < attachmentFileCountLimit) {
+function addMoreAttachment(attachmentFileCountLimit) {
+  var deleteLabel = $('.icon-add-more-attachment').data('delete-label');
+  if (attachmentFileCountLimit == -1 || $(".attachment-row").length < attachmentFileCountLimit) {
+    var isAddMore = true;
+    if ($(".attachment-row").length > 0 && $(".attachment-row:last input").val() == "") {
+      isAddMore = false;
+    }
 
-		var isAddMore = true;
-		if ($(".attachment-row").length > 0 && $(".attachment-row:last input").val() == "") {
-			isAddMore = false;
-		}
+    $("#add-more-alert").hide();
+    if (isAddMore) {
+      var deleteLink = '<span class="delete-attachment" style="display: inline-block;">' + deleteLabel + '</span>';
+      var attachmentRow = '<div class="attachment-row"><input type="file" name="attachment[]" id="attachment" class="iris-input" onchange="return (isEmpty(\'attachment-info\',\'attachment\'))" />' + deleteLink + '</div>';
 
-		$("#add-more-alert").hide();
-		if (isAddMore) {
-			var deleteLink = '<span class="delete-attachment" style="display: inline-block;">' + deleteLabel + '</span>';
-			var attachmentRow = '<div class="attachment-row"><input type="file" name="attachment[]" id="attachment" class="iris-input" onchange="return (isEmpty(\'attachment-info\',\'attachment\'))" />' + deleteLink + '</div>';
-
-			$(attachmentRow).insertBefore(".icon-add-more-attachment");
-			$(".attachment-row:last").find("input").val("");
-			$(".attachment-row:last").find("input").css("border-color", "#9a9a9a");
-			$(".attachment-row:last").find(".delete-attachment").show();
-		} else {
-			$("#add-more-alert").show();
-		}
-	}
+      $(attachmentRow).insertBefore(".icon-add-more-attachment");
+      $(".attachment-row:last").find("input").val("");
+      $(".attachment-row:last").find("input").css("border-color", "#9a9a9a");
+      $(".attachment-row:last").find(".delete-attachment").show();
+    } else {
+      $("#add-more-alert").show();
+    }
+  }
 }
 $('#attachment').on('click touchstart', function() {
 	$(this).val('');
