@@ -340,7 +340,7 @@ $lang = new Language(Config::IRIS_LOCALE);
 		<?php
                 if (Config::ATTACHMENT_FILE_COUNT_LIMIT != 1) {
                     ?>
-		<div onClick="addMoreAttachment(<?php echo Config::ATTACHMENT_FILE_COUNT_LIMIT; ?>);" class="icon-add-more-attachment">
+		<div onClick="addMoreAttachment(<?php echo Config::ATTACHMENT_FILE_COUNT_LIMIT; ?>);" class="icon-add-more-attachment" data-delete-label=<?php echo $lang->value("label_attachment_delete"); ?>>
                 <?php  echo $lang->value("label_attachment_addmore"); ?>
             </div>
             <?php
