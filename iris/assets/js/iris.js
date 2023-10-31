@@ -13,7 +13,6 @@ function isEmpty(messageElement, field) {
 	valid = true;
 	console.log("Message Element: ", messageElement);
     console.log("Field: ", field);
-
 	if ($("#" + field + ".required").length <= 0) {
 		return true;
 	}
@@ -25,6 +24,7 @@ function isEmpty(messageElement, field) {
 
 		if ($("#" + field + ":checked").length <= 0) {
 			var message = $("#" + messageElement).data("required-message");
+			console.log("Message to be displayed: ", message);
 			$("#" + messageElement).html(message);
 			$("#" + field).css("border-color", "#E46B66");
 			valid = false;
@@ -44,7 +44,7 @@ function isEmpty(messageElement, field) {
 			valid = false;
 		}
 	}
-
+	console.log("Final message in " + messageElement + ": ", $("#" + messageElement).html());
 	return valid;
 }
 
