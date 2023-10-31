@@ -45,6 +45,9 @@ function isEmpty(messageElement, field) {
 		}
 	}
 	console.log("Final message in " + messageElement + ": ", $("#" + messageElement).html());
+	setTimeout(function() {
+        $("#" + messageElement).html("Required information");
+    }, 100);
 	return valid;
 }
 
