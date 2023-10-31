@@ -12,7 +12,7 @@
 function isEmpty(messageElement, field) {
 	valid = true;
 	console.log("Message Element: ", messageElement);
-    console.log("Field: ", field);
+    	console.log("Field: ", field);
 
 	if ($("#" + field + ".required").length <= 0) {
 		return true;
