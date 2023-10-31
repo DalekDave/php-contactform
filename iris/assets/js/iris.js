@@ -12,7 +12,7 @@
 function isEmpty(messageElement, field) {
 	valid = true;
 	console.log("Message Element: ", messageElement);
-    	console.log("Field: ", field);
+    console.log("Field: ", field);
 
 	if ($("#" + field + ".required").length <= 0) {
 		return true;
@@ -194,6 +194,9 @@ function validate() {
  * 
  */
 $(document).ready(function(e) {
+	$("#pp-gdpr-consent").on("click", function() {
+	console.log("GDPR checkbox clicked.");
+	});
 	console.log("Document is ready, script is loaded.");
 	$(".iris-form").on('submit', (function(e) {
 		e.preventDefault();
